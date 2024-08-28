@@ -18,7 +18,7 @@ const App = () => {
   useEffect(() => {
     // Disconnect socket on component unmount
     return () => {
-      // socket.disconnect();
+      socket.disconnect();
     };
   }, []);
 
@@ -29,6 +29,7 @@ const App = () => {
           className='top'
           onMouseDown={() => handlePress('top')}
           onMouseUp={() => handleRelease('top')}
+          onContextMenu={(e) => e.preventDefault()} // Prevent context menu
         >
           <div className='key'>▲</div>
         </div>
@@ -37,6 +38,7 @@ const App = () => {
             className='key keyLeft'
             onMouseDown={() => handlePress('left')}
             onMouseUp={() => handleRelease('left')}
+            onContextMenu={(e) => e.preventDefault()} // Prevent context menu
           >
             ◀
           </div>
@@ -44,6 +46,7 @@ const App = () => {
             className='key keyRight'
             onMouseDown={() => handlePress('right')}
             onMouseUp={() => handleRelease('right')}
+            onContextMenu={(e) => e.preventDefault()} // Prevent context menu
           >
             ▶
           </div>
@@ -52,6 +55,7 @@ const App = () => {
           className='bot'
           onMouseDown={() => handlePress('bottom')}
           onMouseUp={() => handleRelease('bottom')}
+          onContextMenu={(e) => e.preventDefault()} // Prevent context menu
         >
           <div className='key'>▼</div>
         </div>

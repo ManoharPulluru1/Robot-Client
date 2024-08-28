@@ -1,65 +1,76 @@
-*{
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
-
-.appMain {
+/* Overall Container Style */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f4f6; /* Light background for a modern look */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.Remote {
-  width: 250px;
-  height: 300px;
-  background-color: rgb(237, 224, 224);
-  display: flex;
-  flex-direction: column;
-  border-radius: 30px;
-}
-
-.top, .mid, .bot {
-  height: 100px;
-  width: 100%;
+.appContainer {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fff; /* White background for the control panel */
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 30px;
 }
 
-.mid1 {
-  justify-content: space-between;
-  padding: 0 30px;
-}
-
-.key {
-  height: 40px;
-  width: 40px;
-  background-color: black;
-  color: white;
-  display: flex;
+/* Control Panel Style */
+.controlPanel {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px;
+  gap: 20px;
+  justify-items: center;
   align-items: center;
+}
+
+/* Button Style */
+.arrowButton {
+  width: 80px;
+  height: 80px;
+  display: flex;
   justify-content: center;
-  border-radius: 10px;
+  align-items: center;
+  background-color: #0078d4; /* Vibrant blue color for the buttons */
+  color: #fff;
+  font-size: 2rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.keyLeft {
+/* Hover and Active Effects */
+.arrowButton:hover {
+  background-color: #005ea6; /* Slightly darker blue on hover */
 }
 
-.keyRight {
+.arrowButton:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Disable text selection */
-.appMain {
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10+ and Edge */
-  user-select: none; /* Standard syntax */
+/* Positioning the Arrows */
+#upButton {
+  grid-column: 2;
 }
 
-/* Prevent long-press context menu */
-.key {
-  -webkit-touch-callout: none; /* Disable iOS context menu */
+#leftButton {
+  grid-column: 1;
+}
+
+#rightButton {
+  grid-column: 3;
+}
+
+#downButton {
+  grid-column: 2;
+  grid-row: 2;
 }

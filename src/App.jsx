@@ -6,7 +6,6 @@ import "./App.css";
 const socket = io('https://robot-server-8i99.onrender.com'); // Adjust to your server URL
 
 const App = () => {
-
   const handlePress = (direction) => {
     socket.emit('press', direction); // Emit press event with direction
   };
@@ -23,45 +22,35 @@ const App = () => {
   }, []);
 
   return (
-    <div className='appMain'>
-      <div className='Remote'>
-        <div
-          className='top'
+    <div className='appContainer'>
+      <div className='controlPanel'>
+        <div className='arrowButton' id='upButton'
           onMouseDown={() => handlePress('top')}
           onMouseUp={() => handleRelease('top')}
-          onContextMenu={(e) => e.preventDefault()} // Prevent context menu
-        >
-          <div className='key'>▲</div>
+          onContextMenu={(e) => e.preventDefault()}>
+          ▲
         </div>
-        <div className='mid mid1'>
-          <div
-            className='key keyLeft'
-            onMouseDown={() => handlePress('left')}
-            onMouseUp={() => handleRelease('left')}
-            onContextMenu={(e) => e.preventDefault()} // Prevent context menu
-          >
-            ◀
-          </div>
-          <div
-            className='key keyRight'
-            onMouseDown={() => handlePress('right')}
-            onMouseUp={() => handleRelease('right')}
-            onContextMenu={(e) => e.preventDefault()} // Prevent context menu
-          >
-            ▶
-          </div>
+        <div className='arrowButton' id='leftButton'
+          onMouseDown={() => handlePress('left')}
+          onMouseUp={() => handleRelease('left')}
+          onContextMenu={(e) => e.preventDefault()}>
+          ◀
         </div>
-        <div
-          className='bot'
+        <div className='arrowButton' id='rightButton'
+          onMouseDown={() => handlePress('right')}
+          onMouseUp={() => handleRelease('right')}
+          onContextMenu={(e) => e.preventDefault()}>
+          ▶
+        </div>
+        <div className='arrowButton' id='downButton'
           onMouseDown={() => handlePress('bottom')}
           onMouseUp={() => handleRelease('bottom')}
-          onContextMenu={(e) => e.preventDefault()} // Prevent context menu
-        >
-          <div className='key'>▼</div>
+          onContextMenu={(e) => e.preventDefault()}>
+          ▼
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default App;

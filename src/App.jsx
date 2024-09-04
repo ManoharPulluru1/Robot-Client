@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import "./App.css";
 
 // Initialize socket connection
-const socket = io('https://robot-server-8i99.onrender.com'); // Adjust to your server URL
+const socket = io('https://ig.gov-cloud.ai/robots-server/'); // Adjust to your server URL
 
 const App = () => {
   const handlePress = (direction) => {
